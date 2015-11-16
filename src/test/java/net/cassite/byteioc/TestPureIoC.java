@@ -22,11 +22,11 @@ public class TestPureIoC {
         @Test
         public void testFieldMethodInfoNormal() throws Exception {
                 FieldMethodInfo fieldMethodInfo = new FieldMethodInfo(new BClass("net.cassite.byteioc.Bean1"));
-                fieldMethodInfo.addFieldArg(new BField("testStr"), "$builtin2");
+                fieldMethodInfo.addFieldArg(new BField("testStr", new BClass("java.lang.String")), "$builtin2");
                 fieldMethodInfo.addMethodArgs(new BMethod("setTestStr", new BClass[]{new BClass("java.lang.String")}), new String[]{"$builtin3"});
 
                 Assert.assertEquals(new BClass(Bean1.class.getName()), fieldMethodInfo.getCls());
-                Assert.assertEquals("$builtin2", fieldMethodInfo.getFieldArgs().get(new BField("testStr")));
+                Assert.assertEquals("$builtin2", fieldMethodInfo.getFieldArgs().get(new BField("testStr", new BClass("java.lang.String"))));
                 Assert.assertArrayEquals(new String[]{"$builtin3"}, fieldMethodInfo.getMethodArgs().get(new BMethod("setTestStr", new BClass[]{new BClass("java.lang.String")})));
         }
 
@@ -124,7 +124,7 @@ public class TestPureIoC {
 
                 // primitive through setter
                 FieldMethodInfo fieldMethodInfo = new FieldMethodInfo(new BClass("net.cassite.byteioc.Bean1"));
-                fieldMethodInfo.addMethodArgs(new BMethod("setI", new BClass[]{new BClass("java.lang.Integer")}), new String[]{"constant$1"});
+                fieldMethodInfo.addMethodArgs(new BMethod("setI", new BClass[]{new BClass("int")}), new String[]{"constant$1"});
                 dependencies.addFieldMethodInfo(fieldMethodInfo);
 
                 // object through setter
@@ -150,7 +150,18 @@ public class TestPureIoC {
                 fieldMethodInfo4Bean4.addMethodArgs(new BMethod("setBean3", new BClass[]{new BClass("net.cassite.byteioc.Bean3")}), new String[]{"con3"});
                 // multiple set
                 fieldMethodInfo4Bean4.addMethodArgs(new BMethod("setBean1", new BClass[]{new BClass("net.cassite.byteioc.Bean1")}), new String[]{"con1"});
+                // generator
+                fieldMethodInfo4Bean4.addMethodArgs(new BMethod("setBean2", new BClass[]{new BClass("net.cassite.byteioc.Bean2")}), new String[]{"gen1"});
+                // field
+                fieldMethodInfo4Bean4.addFieldArg(new BField("testStr", new BClass("java.lang.String")), "constant$Test2");
                 dependencies.addFieldMethodInfo(fieldMethodInfo4Bean4);
+
+                ConstructorInfo genCon = new ConstructorInfo(new BClass("net.cassite.byteioc.PlainGenerator"), new BConstructor(new BClass[]{}), new String[]{});
+                dependencies.addConstructorInfo("gen1con", genCon);
+                dependencies.addGenerator("gen1", "gen1con");
+
+                PrimitiveInfo primitiveInfo = new PrimitiveInfo("abcdabcd");
+                dependencies.addPrimitiveInfo("constant$Test2", primitiveInfo);
 
                 processor.process(dependencies);
 
@@ -167,6 +178,8 @@ public class TestPureIoC {
                 Assert.assertEquals(1, bean4.getBean3().getBean1().getI());
                 Assert.assertEquals(1, bean4.getBean3().getBean2().getBean1().getI());
                 Assert.assertNotNull(bean4.getBean1());
+                Assert.assertNotNull(bean4.getBean2());
+                Assert.assertEquals("abcdabcd", bean4.getTestStr());
 
                 Bean4 bean4_2 = new Bean4();
                 Assert.assertNotEquals(bean4, bean4_2);

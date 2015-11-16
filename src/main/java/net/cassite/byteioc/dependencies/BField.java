@@ -5,18 +5,24 @@ package net.cassite.byteioc.dependencies;
  */
 public class BField {
         private String fieldName;
+        private BClass type;
 
-        public BField(String fieldName) {
+        public BField(String fieldName, BClass type) {
                 this.fieldName = fieldName;
+                this.type = type;
         }
 
         public String getFieldName() {
                 return fieldName;
         }
 
+        public BClass getType() {
+                return type;
+        }
+
         @Override
         public int hashCode() {
-                return fieldName.hashCode();
+                return fieldName.hashCode() + type.hashCode();
         }
 
         @Override
@@ -24,7 +30,7 @@ public class BField {
                 if (o == null) return false;
                 if (o instanceof BField) {
                         BField that = (BField) o;
-                        return this.fieldName.equals(that.fieldName);
+                        return this.fieldName.equals(that.fieldName) && this.type.equals(that.type);
                 } else {
                         return false;
                 }

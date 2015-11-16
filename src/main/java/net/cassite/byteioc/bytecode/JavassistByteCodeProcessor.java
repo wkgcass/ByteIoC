@@ -113,7 +113,7 @@ public class JavassistByteCodeProcessor implements ByteCodeProcessor {
                         return generatePrimitive(info);
                 } else if (dependencies.getGeneratorMap().containsKey(name)) {
                         // generator
-                        return "((Generator)" + generateArg(dependencies.getGeneratorMap().get(name), dependencies) + ").generate()";
+                        return "((net.cassite.byteioc.dependencies.Generator)" + generateArg(dependencies.getGeneratorMap().get(name), dependencies) + ").generate()";
                 } else {
                         throw new NameNotFoundException();
                 }
@@ -182,13 +182,14 @@ public class JavassistByteCodeProcessor implements ByteCodeProcessor {
         /**
          * set field value
          *
+         * @param type         type of the field
          * @param fieldName    name of the field
          * @param value        value to set
          * @param dependencies dependency context
          * @return a string looks like this.F = xxx; (a full field assignment, the end `;` included)
          */
-        public String fillField(String fieldName, String value, Dependencies dependencies) throws Exception {
-                return "this." + fieldName + "=" + generateArg(value, dependencies) + ";";
+        public String fillField(BClass type, String fieldName, String value, Dependencies dependencies) throws Exception {
+                return "this." + fieldName + "=" + "(" + type.getClassName() + ")" + generateArg(value, dependencies) + ";";
         }
 
         /**
@@ -202,14 +203,11 @@ public class JavassistByteCodeProcessor implements ByteCodeProcessor {
         public String fillMethod(BMethod method, String[] args, Dependencies dependencies) throws Exception {
                 StringBuilder sb = new StringBuilder();
                 sb.append("this.").append(method.methodName).append("(");
-                boolean isFirst = true;
-                for (String arg : args) {
-                        if (isFirst) {
-                                isFirst = false;
-                        } else {
+                for (int i = 0; i < args.length; ++i) {
+                        if (i != 0) {
                                 sb.append(",");
                         }
-                        sb.append(generateArg(arg, dependencies));
+                        sb.append("(").append(method.argClasses[i].getClassName()).append(")").append(generateArg(args[i], dependencies));
                 }
                 sb.append(");");
                 return sb.toString();
@@ -237,7 +235,7 @@ public class JavassistByteCodeProcessor implements ByteCodeProcessor {
                         FieldMethodInfo info = dependencies.getFieldMethodInfoMap().get(cls);
                         // fields
                         for (BField field : info.getFieldArgs().keySet()) {
-                                toInsert.append(fillField(field.getFieldName(), info.getFieldArgs().get(field), dependencies));
+                                toInsert.append(fillField(field.getType(), field.getFieldName(), info.getFieldArgs().get(field), dependencies));
                         }
                         // methods
                         for (BMethod method : info.getMethodArgs().keySet()) {
