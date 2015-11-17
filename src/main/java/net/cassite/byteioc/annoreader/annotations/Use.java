@@ -1,0 +1,19 @@
+package net.cassite.byteioc.annoreader.annotations;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+/**
+ * automatically wire the class/setter/field/param
+ */
+@Retention(RetentionPolicy.CLASS)
+@Target({ElementType.TYPE, ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER})
+public @interface Use {
+        String value() default "";
+
+        Class<?> target() default Use.class;
+
+        String val() default "*(FE#89yF#($Yn98v";
+}
