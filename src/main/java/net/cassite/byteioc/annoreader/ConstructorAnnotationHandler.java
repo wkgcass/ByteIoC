@@ -17,9 +17,10 @@ public interface ConstructorAnnotationHandler extends Handler {
          * @param args        arguments to fill the constructor
          * @param constructor current handling constructor
          * @param annotations annotations presented on the constructor
+         * @param chain       constructor handler chain
          * @param helper      helper for handlers
          * @return name of the constructorInfo to be generated
          * @throws Exception passable exceptions
          */
-        String handle(String name, String[] args, CtConstructor constructor, Collection<Annotation> annotations, Helper helper) throws Exception;
+        String handle(String name, String[] args, CtConstructor constructor, Collection<Annotation> annotations, ConstructorChainHandler chain, Helper helper) throws Exception;
 }

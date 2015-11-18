@@ -2,22 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d39b49c3-2ca1-4043-a7bf-ea3552caf1eb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/AnnotationReader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/AutoWire.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ConstructorAnnotationHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Default.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/FieldAnnotationHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/Handler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/Helper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/MethodAnnotationHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Named.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ParamAnnotationHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/exceptions/ReadingException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Singleton.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/TypeAnnotationHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Use.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/WireType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/DependencyReader.java" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/DependencyReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/AutoWireFieldHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/AutoWireMethodHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/AutoWireTypeHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ConstructorChainHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/ConstructorHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/DefaultConstructorHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/DefaultTypeHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/FieldChainHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/FieldHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/MethodChainHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/MethodHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/NamedConstructorHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/NamedTypeHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ParamChainHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/ParamHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/SingletonTypeHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/TypeChainHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/TypeHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/UseFieldHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/UseMethodHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/UseParamHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/AnnotationReader.class" afterPath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/AnnotationReader.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/net/cassite/byteioc/Bean1.class" afterPath="$PROJECT_DIR$/target/test-classes/net/cassite/byteioc/Bean1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/ConstructorAnnotationHandler.class" afterPath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/ConstructorAnnotationHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/FieldAnnotationHandler.class" afterPath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/FieldAnnotationHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/Helper.class" afterPath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/Helper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/MethodAnnotationHandler.class" afterPath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/MethodAnnotationHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/ParamAnnotationHandler.class" afterPath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/ParamAnnotationHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/net/cassite/byteioc/TestPureIoC.class" afterPath="$PROJECT_DIR$/target/test-classes/net/cassite/byteioc/TestPureIoC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/TypeAnnotationHandler.class" afterPath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/TypeAnnotationHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/annotations/WireType.class" afterPath="$PROJECT_DIR$/target/classes/net/cassite/byteioc/annoreader/annotations/WireType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/AnnotationReader.java" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/AnnotationReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/net/cassite/byteioc/Bean1.java" afterPath="$PROJECT_DIR$/src/test/java/net/cassite/byteioc/Bean1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ConstructorAnnotationHandler.java" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ConstructorAnnotationHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Default.java" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Default.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/FieldAnnotationHandler.java" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/FieldAnnotationHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/Helper.java" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/Helper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/MethodAnnotationHandler.java" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/MethodAnnotationHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ParamAnnotationHandler.java" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ParamAnnotationHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/net/cassite/byteioc/TestPureIoC.java" afterPath="$PROJECT_DIR$/src/test/java/net/cassite/byteioc/TestPureIoC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/TypeAnnotationHandler.java" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/TypeAnnotationHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Use.java" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Use.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/WireType.java" afterPath="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/WireType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ByteIoC.iws" />
@@ -42,33 +69,92 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Helper.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Helper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/Helper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8553055">
-              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="185" column="38" selection-start-line="185" selection-start-column="38" selection-end-line="185" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#462#463#0" expanded="true" />
-                <element signature="e#513#514#0" expanded="true" />
+                <element signature="e#527#544#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AnnotationReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/AnnotationReader.java">
+      <file leaf-file-name="UseFieldHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/UseFieldHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="145" column="75" selection-start-line="145" selection-start-column="8" selection-end-line="145" selection-end-column="75" />
+              <caret line="28" column="68" selection-start-line="24" selection-start-column="16" selection-end-line="28" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#716#746#0" expanded="true" />
-                <element signature="e#840#864#0" expanded="true" />
-                <element signature="e#960#985#0" expanded="true" />
-                <element signature="e#1079#1103#0" expanded="true" />
-                <element signature="e#1195#1218#0" expanded="true" />
-                <element signature="e#1280#1288#0" expanded="true" />
+                <element signature="e#1615#1616#0" expanded="true" />
+                <element signature="e#1699#1700#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UseParamHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/UseParamHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2664#2665#0" expanded="true" />
+                <element signature="e#2748#2749#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParamHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/ParamHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1671#1672#0" expanded="true" />
+                <element signature="e#1710#1711#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConstructorHandler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/ConstructorHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.48231512">
+              <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1030#1031#0" expanded="true" />
+                <element signature="e#1069#1070#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Use.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Use.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="48" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParamAnnotationHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ParamAnnotationHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="65" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,8 +167,8 @@
       <list>
         <option value="AnnotationType" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -97,33 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/pure/ioc/dependencies/ConstructorInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/pure/ioc/dependencies/BConstructor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/pure/ioc/dependencies/BMethod.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/pure/ioc/dependencies/PrimitiveInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/pure/ioc/bytecode/JavassistByteCodeProcessor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/bytecode/ClassPoolProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/bytecode/DefaultClassPoolProvider.java" />
-        <option value="$PROJECT_DIR$/src/test/java/net/cassite/byteioc/Bean2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/bytecode/Utils.java" />
-        <option value="$PROJECT_DIR$/src/test/java/net/cassite/byteioc/Bean3.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/exceptions/DuplicateClassException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/exceptions/DuplicateNameException.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/test/java/net/cassite/byteioc/Bean1.java" />
-        <option value="$PROJECT_DIR$/src/test/java/net/cassite/byteioc/PlainGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/dependencies/Generator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/dependencies/BField.java" />
-        <option value="$PROJECT_DIR$/src/test/java/net/cassite/byteioc/Bean4.java" />
-        <option value="$PROJECT_DIR$/src/test/java/net/cassite/byteioc/TestPureIoC.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/reader/anno/Singleton.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/reader/anno/Wire.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/reader/anno/AutoWire.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/reader/anno/UseInt.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/reader/anno/Use.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/reader/anno/AnnotationReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/reader/anno/AnnotationHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/reader/anno/Handler.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/bytecode/JavassistByteCodeProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/reader/anno/Default.java" />
@@ -137,17 +196,44 @@
         <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/reader/anno/TypeAnnotationHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/DependencyReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/dependencies/Dependencies.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Default.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/TypeAnnotationHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/exceptions/ReadingException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ConstructorAnnotationHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ParamAnnotationHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/MethodAnnotationHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/FieldAnnotationHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/AutoWire.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/Chain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ConstructorAnnotationHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/HandlerChain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/FieldAnnotationHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/FieldChainHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ConstructorChainHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/MethodAnnotationHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/MethodChainHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/WireType.java" />
+        <option value="$PROJECT_DIR$/src/test/java/net/cassite/byteioc/Bean1.java" />
+        <option value="$PROJECT_DIR$/src/test/java/net/cassite/byteioc/TestPureIoC.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ParamChainHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/TypeAnnotationHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/TypeChainHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/AnnotationReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/AutoWireMethodHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Use.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/TypeHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/NamedTypeHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Default.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/DefaultTypeHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/SingletonTypeHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/DefaultConstructorHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/NamedConstructorHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/AutoWireFieldHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/AutoWireTypeHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/MethodHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/FieldHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/ParamUseHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/Helper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/UseFieldHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/UseMethodHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ParamAnnotationHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/UseParamHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/ParamHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/ConstructorHandler.java" />
       </list>
     </option>
   </component>
@@ -199,6 +285,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -415,13 +502,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="handlers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ByteIoC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ByteIoC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="byteioc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="annoreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="annotations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
@@ -443,9 +563,11 @@
       <recent name="$PROJECT_DIR$/src/test" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="net.cassite.byteioc.annoreader.handlers.AutoWireTypeHandler" />
       <recent name="net.cassite.pure.ioc.ByteCodeProcessor" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="net.cassite.byteioc.annoreader" />
       <recent name="net.cassite.pure.ioc.exceptions" />
     </key>
   </component>
@@ -843,11 +965,13 @@
       <workItem from="1447680455336" duration="3038000" />
       <workItem from="1447730583941" duration="3899000" />
       <workItem from="1447743101455" duration="7239000" />
+      <workItem from="1447816662451" duration="4029000" />
+      <workItem from="1447826016879" duration="8961000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44051000" />
+    <option name="totallyTimeSpent" value="57041000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1362" height="745" extended-state="6" />
@@ -855,7 +979,6 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923076" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3123077" sideWeight="0.50293684" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -867,7 +990,6 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2496329" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3276923" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -877,8 +999,10 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496329" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3276923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923076" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3276923" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -903,176 +1027,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12057878">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/lang/annotation/RetentionPolicy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31350482">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/lang/Override.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62700963">
-          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar!/javassist/ClassPool.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.0">
-          <caret line="126" column="36" selection-start-line="126" selection-start-column="36" selection-end-line="126" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA-sources.jar!/javassist/ClassPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6334405">
-          <caret line="157" column="31" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/exceptions/NameNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="67" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/ByteCodeProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28938907">
-          <caret line="13" column="77" selection-start-line="13" selection-start-column="77" selection-end-line="13" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/dependencies/BClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14469454">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/dependencies/BMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37299034">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/dependencies/PrimitiveInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1800643">
-          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/dependencies/FieldMethodInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73472667">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/bytecode/DefaultClassPoolProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19292605">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/exceptions/DuplicateClassException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2567237">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/exceptions/DuplicateNameException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2200489">
-          <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net/cassite/byteioc/Bean2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28639618">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10739857">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net/cassite/byteioc/Bean1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6062052">
-          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net/cassite/byteioc/Bean3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14081146">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/dependencies/Generator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25059667">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net/cassite/byteioc/PlainGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25059667">
-          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/dependencies/BField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1813842">
-          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/net/cassite/byteioc/Bean4.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1813842">
@@ -1080,25 +1034,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net/cassite/byteioc/TestPureIoC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5346062">
-          <caret line="187" column="21" selection-start-line="187" selection-start-column="21" selection-end-line="187" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/lang/annotation/Retention.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5305466">
           <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Singleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31350482">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1106,7 +1045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12057878">
           <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1114,7 +1052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5305466">
           <caret line="50" column="26" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1122,9 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36173633">
           <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1132,9 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="130" column="10" selection-start-line="130" selection-start-column="10" selection-end-line="130" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1142,17 +1073,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24115756">
           <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Named.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1160,7 +1080,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50643086">
           <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1168,15 +1087,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1688103">
           <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Default.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2170418">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1184,7 +1094,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="73" selection-start-line="8" selection-start-column="73" selection-end-line="8" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1192,24 +1101,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65273315">
           <caret line="33" column="87" selection-start-line="33" selection-start-column="87" selection-end-line="33" selection-end-column="87" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#446#462#0" expanded="true" />
-            <element signature="e#671#696#0" expanded="true" />
-            <element signature="e#976#999#0" expanded="true" />
-            <element signature="e#1193#1218#0" expanded="true" />
-            <element signature="e#1361#1377#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/TypeAnnotationHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1217,24 +1108,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-          <folding>
-            <element signature="e#249#250#0" expanded="false" />
-            <element signature="e#291#292#0" expanded="false" />
-            <element signature="e#359#360#0" expanded="false" />
-            <element signature="e#408#409#0" expanded="false" />
-            <element signature="e#460#461#0" expanded="false" />
-            <element signature="e#500#501#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ConstructorAnnotationHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36173633">
-          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1242,50 +1115,125 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36173633">
           <caret line="126" column="55" selection-start-line="126" selection-start-column="47" selection-end-line="126" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ParamAnnotationHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ConstructorAnnotationHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Use.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/AutoWire.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2652733">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-          <folding />
+        <state vertical-scroll-proportion="0.45819935">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/FieldAnnotationHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="73" selection-start-line="19" selection-start-column="73" selection-end-line="19" selection-end-column="73" />
+        <state vertical-scroll-proportion="0.4340836">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/FieldChainHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36173633">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ConstructorChainHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6993569">
+          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/net/cassite/byteioc/PlainGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1688103">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/net/cassite/byteioc/TestPureIoC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29594272">
+          <caret line="30" column="91" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/MethodAnnotationHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.823389">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ParamChainHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0">
+          <caret line="36" column="75" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/TypeAnnotationHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5823389">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/TypeChainHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06682578">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/MethodChainHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.93078756">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/lang/annotation/Annotation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48231512">
+          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/net/cassite/byteioc/Bean1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.80707395">
+          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/AnnotationReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.28938907">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/TypeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5546624">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/MethodAnnotationHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/NamedTypeHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="98" selection-start-line="20" selection-start-column="98" selection-end-line="20" selection-end-column="98" />
+        <state vertical-scroll-proportion="0.6028939">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1294,36 +1242,237 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/WireType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.14469454">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/AnnotationReader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Singleton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="145" column="75" selection-start-line="145" selection-start-column="8" selection-end-line="145" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.2652733">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Default.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28938907">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#716#746#0" expanded="true" />
-            <element signature="e#840#864#0" expanded="true" />
-            <element signature="e#960#985#0" expanded="true" />
-            <element signature="e#1079#1103#0" expanded="true" />
-            <element signature="e#1195#1218#0" expanded="true" />
-            <element signature="e#1280#1288#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/DefaultConstructorHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31350482">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
+            <element signature="e#1152#1153#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Named.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24115756">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/NamedConstructorHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6028939">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1198#1199#0" expanded="true" />
+            <element signature="e#1284#1285#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/AutoWire.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24115756">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/SingletonTypeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40996784">
+          <caret line="17" column="119" selection-start-line="17" selection-start-column="119" selection-end-line="17" selection-end-column="119" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1074#1075#0" expanded="true" />
+            <element signature="e#1164#1165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/AutoWireTypeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#716#735#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/AutoWireFieldHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#830#831#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/MethodHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="96" selection-start-line="18" selection-start-column="96" selection-end-line="18" selection-end-column="96" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1955#1956#0" expanded="true" />
+            <element signature="e#1994#1995#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/FieldHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66237944">
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1694#1695#0" expanded="true" />
+            <element signature="e#1733#1734#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/DefaultTypeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="120" selection-start-line="18" selection-start-column="120" selection-end-line="18" selection-end-column="120" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1463#1464#0" expanded="true" />
+            <element signature="e#1551#1552#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/AutoWireMethodHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6028939">
+          <caret line="25" column="78" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#872#873#0" expanded="true" />
+            <element signature="e#961#962#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/annotations/Use.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/Helper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8553055">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="185" column="38" selection-start-line="185" selection-start-column="38" selection-end-line="185" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#527#544#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/UseMethodHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66237944">
+          <caret line="33" column="75" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/UseFieldHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="68" selection-start-line="24" selection-start-column="16" selection-end-line="28" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1615#1616#0" expanded="true" />
+            <element signature="e#1699#1700#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/ParamAnnotationHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="65" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/UseParamHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2664#2665#0" expanded="true" />
+            <element signature="e#2748#2749#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/ParamHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1671#1672#0" expanded="true" />
+            <element signature="e#1710#1711#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/cassite/byteioc/annoreader/handlers/ConstructorHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48231512">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+            <element signature="e#1069#1070#0" expanded="true" />
           </folding>
         </state>
       </provider>

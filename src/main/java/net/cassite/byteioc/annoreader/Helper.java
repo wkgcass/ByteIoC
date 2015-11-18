@@ -2,6 +2,13 @@ package net.cassite.byteioc.annoreader;
 
 import javassist.*;
 import net.cassite.byteioc.dependencies.Dependencies;
+import net.cassite.byteioc.dependencies.PrimitiveInfo;
+
+import java.lang.annotation.Annotation;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * helper for handlers
@@ -10,9 +17,15 @@ public class Helper {
         private AnnotationReader reader;
         private Dependencies dependencies;
 
+        private Map<CtClass, String> defaultConstructorsToUse = new HashMap<CtClass, String>();
+
         Helper(AnnotationReader reader, Dependencies dependencies) {
                 this.reader = reader;
                 this.dependencies = dependencies;
+        }
+
+        public Map<CtClass, String> getDefaultConstructorsToUse() {
+                return defaultConstructorsToUse;
         }
 
         public ClassPool getClassPool() {
@@ -49,5 +62,128 @@ public class Helper {
 
         public String handleField(CtField field) throws Exception {
                 return reader.handleField(field, this);
+        }
+
+        public Dependencies getDependencies() {
+                return dependencies;
+        }
+
+        public String getInstanceNameByClass(String className) {
+                // TODO
+                return null;
+        }
+
+        private String addPrimitive(PrimitiveInfo info) {
+                // TODO
+                return "";
+        }
+
+        public String addPrimitive(String primitive) {
+                PrimitiveInfo info = new PrimitiveInfo(primitive);
+                return addPrimitive(info);
+        }
+
+        public String addPrimitive(int primitive) {
+                PrimitiveInfo info = new PrimitiveInfo(primitive);
+                return addPrimitive(info);
+        }
+
+        public String addPrimitive(byte primitive) {
+                PrimitiveInfo info = new PrimitiveInfo(primitive);
+                return addPrimitive(info);
+        }
+
+        public String addPrimitive(short primitive) {
+                PrimitiveInfo info = new PrimitiveInfo(primitive);
+                return addPrimitive(info);
+        }
+
+        public String addPrimitive(long primitive) {
+                PrimitiveInfo info = new PrimitiveInfo(primitive);
+                return addPrimitive(info);
+        }
+
+        public String addPrimitive(double primitive) {
+                PrimitiveInfo info = new PrimitiveInfo(primitive);
+                return addPrimitive(info);
+        }
+
+        public String addPrimitive(float primitive) {
+                PrimitiveInfo info = new PrimitiveInfo(primitive);
+                return addPrimitive(info);
+        }
+
+        public String addPrimitive(boolean primitive) {
+                PrimitiveInfo info = new PrimitiveInfo(primitive);
+                return addPrimitive(info);
+        }
+
+        public String addPrimitive(char primitive) {
+                PrimitiveInfo info = new PrimitiveInfo(primitive);
+                return addPrimitive(info);
+        }
+
+        public String generateName() {
+                // TODO
+                return "";
+        }
+
+        public static boolean isSetter(CtMethod method) {
+                String name = method.getName();
+                try {
+                        if (name.startsWith("set") && name.length() > 3 && name.charAt(3) >= 'A' && name.charAt(3) <= 'Z'
+                                && (method.getReturnType() == CtClass.voidType || method.getReturnType() == method.getDeclaringClass())
+                                && method.getParameterTypes().length == 1) {
+                                return true;
+                        } else {
+                                return false;
+                        }
+                } catch (Exception e) {
+                        throw new RuntimeException(e);
+                }
+        }
+
+        public static boolean containsAnnotation(Class<? extends Annotation> annoClass, Collection<Annotation> annotations) {
+                return null != getAnnotation(annoClass, annotations);
+        }
+
+        @SuppressWarnings("unchecked")
+        public static <A extends Annotation> A getAnnotation(Class<A> annoClass, Collection<Annotation> annotations) {
+                for (Annotation anno : annotations) {
+                        if (annoClass.isInstance(anno)) {
+                                return (A) anno;
+                        }
+                }
+                return null;
+        }
+
+        public static boolean resultChanged(String name1, String name2) {
+                return name1 == null ? name2 != null : !name1.equals(name2);
+        }
+
+        public static boolean resultChanged(String[] args1, String[] args2) {
+                return args1 == null ? args2 != null : (args2 == null || !Arrays.equals(args1, args2));
+        }
+
+        public String getPrimitive(CtClass type, String val) {
+                if (type.getName().equals("java.lang.Integer") || type.getName().equals("int")) {
+                        return addPrimitive(Integer.parseInt(val));
+                } else if (type.getName().equals("java.lang.Double") || type.getName().equals("double")) {
+                        return addPrimitive(Double.parseDouble(val));
+                } else if (type.getName().equals("java.lang.Float") || type.getName().equals("float")) {
+                        return addPrimitive(Float.parseFloat(val));
+                } else if (type.getName().equals("java.lang.Short") || type.getName().equals("short")) {
+                        return addPrimitive(Short.parseShort(val));
+                } else if (type.getName().equals("java.lang.Long") || type.getName().equals("long")) {
+                        return addPrimitive(Long.parseLong(val));
+                } else if (type.getName().equals("java.lang.Byte") || type.getName().equals("byte")) {
+                        return addPrimitive(Byte.parseByte(val));
+                } else if (type.getName().equals("java.lang.Boolean") || type.getName().equals("boolean")) {
+                        return addPrimitive(Boolean.parseBoolean(val));
+                } else if (type.getName().equals("java.lang.Character") || type.getName().equals("char")) {
+                        return addPrimitive(val.charAt(0));
+                } else {
+                        return addPrimitive(val);
+                }
         }
 }

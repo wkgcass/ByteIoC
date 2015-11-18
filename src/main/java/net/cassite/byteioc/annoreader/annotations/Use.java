@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 public @interface Use {
         String value() default "";
 
-        Class<?> target() default Use.class;
+        String target() default "net.cassite.byteioc.annoreader.annotations.Use";
 
         String val() default "*(FE#89yF#($Yn98v";
 }

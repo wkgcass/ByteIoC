@@ -1,9 +1,12 @@
 package net.cassite.byteioc;
 
+import net.cassite.byteioc.annoreader.annotations.AutoWire;
+
 /**
  * bean for testing
  */
 public class Bean1 {
+        @AutoWire
         private String testStr;
         private int i;
         private Bean4 bean4;

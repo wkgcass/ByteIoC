@@ -12,21 +12,25 @@ import java.util.Collection;
 public interface ParamAnnotationHandler extends Handler {
         /**
          * @param name        instance name
+         * @param index       index of current handling parameter
          * @param member      the member currently handling
          * @param annotations annotation presented on current handling parameter
+         * @param chain       handler chain
          * @param helper      helper for handlers
          * @return instance name
          * @throws Exception possible exceptions
          */
-        String handleConstructor(String name, CtConstructor member, Collection<Annotation> annotations, Helper helper) throws Exception;
+        String handleConstructor(String name, int index, CtConstructor member, Collection<Annotation> annotations, ParamChainHandler chain, Helper helper) throws Exception;
 
         /**
          * @param name        instance name
+         * @param index       index of current handling parameter
          * @param member      the member currently handling
          * @param annotations annotation presented on current handling parameter
+         * @param chain       handler chain
          * @param helper      helper for handlers
          * @return instance name
          * @throws Exception possible exceptions
          */
-        String handleMethod(String name, CtMethod member, Collection<Annotation> annotations, Helper helper) throws Exception;
+        String handleMethod(String name, int index, CtMethod member, Collection<Annotation> annotations, ParamChainHandler chain, Helper helper) throws Exception;
 }

@@ -7,7 +7,6 @@ import net.cassite.byteioc.dependencies.*;
 import net.cassite.byteioc.exceptions.ReadingException;
 
 import java.lang.annotation.Annotation;
-import java.lang.reflect.Member;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -87,72 +86,43 @@ public class AnnotationReader implements DependencyReader {
         String handleType(CtClass ctClass, Helper helper) throws Exception {
                 Annotation[] annotations = (Annotation[]) ctClass.getAnnotations();
                 List<Annotation> annoList = Arrays.asList(annotations);
-                String toReturn = null;
-                for (TypeAnnotationHandler h : typeAnnotationHandlers) {
-                        if (h.canHandle(annoList)) {
-                                toReturn = h.handle(toReturn, ctClass, annoList, helper);
-                        }
-                }
-                return toReturn;
+                TypeChainHandler chain = new TypeChainHandler(typeAnnotationHandlers);
+                return chain.handle(null, ctClass, annoList, chain, helper);
         }
 
         String handleMethodParam(CtMethod member, int index, Helper helper) throws Exception {
                 Annotation[] annotations = (Annotation[]) member.getParameterAnnotations()[index];
                 List<Annotation> annoList = Arrays.asList(annotations);
-                String toReturn = null;
-                for (ParamAnnotationHandler h : paramAnnotationHandlers) {
-                        if (h.canHandle(annoList)) {
-                                toReturn = h.handleMethod(toReturn, member, annoList, helper);
-                        }
-                }
-                return toReturn;
+                ParamChainHandler chain = new ParamChainHandler(paramAnnotationHandlers);
+                return chain.handleMethod(null, member, annoList, chain, helper);
         }
 
         String handleConstructorParam(CtConstructor member, int index, Helper helper) throws Exception {
                 Annotation[] annotations = (Annotation[]) member.getParameterAnnotations()[index];
                 List<Annotation> annoList = Arrays.asList(annotations);
-                String toReturn = null;
-                for (ParamAnnotationHandler h : paramAnnotationHandlers) {
-                        if (h.canHandle(annoList)) {
-                                toReturn = h.handleConstructor(toReturn, member, annoList, helper);
-                        }
-                }
-                return toReturn;
+                ParamChainHandler chain = new ParamChainHandler(paramAnnotationHandlers);
+                return chain.handleConstructor(null, member, annoList, chain, helper);
         }
 
         String handleConstructor(String[] args, CtConstructor constructor, Helper helper) throws Exception {
                 Annotation[] annotations = (Annotation[]) constructor.getAnnotations();
                 List<Annotation> annoList = Arrays.asList(annotations);
-                String toReturn = null;
-                for (ConstructorAnnotationHandler h : constructorAnnotationHandlers) {
-                        if (h.canHandle(annoList)) {
-                                toReturn = h.handle(toReturn, args, constructor, annoList, helper);
-                        }
-                }
-                return toReturn;
+                ConstructorChainHandler chain = new ConstructorChainHandler(constructorAnnotationHandlers);
+                return chain.handle(null, args, constructor, annoList, chain, helper);
         }
 
         String[] handleMethod(String[] args, CtMethod method, Helper helper) throws Exception {
                 Annotation[] annotations = (Annotation[]) method.getAnnotations();
                 List<Annotation> annoList = Arrays.asList(annotations);
-                for (MethodAnnotationHandler h : methodAnnotationHandlers) {
-                        if (h.canHandle(annoList)) {
-                                args = h.handle(args, method, annoList, helper);
-                        }
-                }
-                return args;
+                MethodChainHandler chain = new MethodChainHandler(methodAnnotationHandlers);
+                return chain.handle(args, method, annoList, chain, helper);
         }
 
         String handleField(CtField field, Helper helper) throws Exception {
                 Annotation[] annotations = (Annotation[]) field.getAnnotations();
                 List<Annotation> annoList = Arrays.asList(annotations);
-                String toReturn = null;
-                for (FieldAnnotationHandler h : fieldAnnotationHandlers) {
-                        if (h.canHandle(annoList)) {
-                                toReturn = h.handle(toReturn, field, annoList, helper);
-                        }
-                }
-                return toReturn;
+                FieldChainHandler chain = new FieldChainHandler(fieldAnnotationHandlers);
+                return chain.handle(null, field, annoList, chain, helper);
         }
 
         public void setConstructorAnnotationHandlers(List<ConstructorAnnotationHandler> constructorAnnotationHandlers) {

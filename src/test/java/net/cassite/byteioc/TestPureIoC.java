@@ -1,5 +1,9 @@
 package net.cassite.byteioc;
 
+import javassist.ClassPool;
+import javassist.CtClass;
+import javassist.CtField;
+import net.cassite.byteioc.annoreader.annotations.AutoWire;
 import net.cassite.byteioc.bytecode.DefaultClassPoolProvider;
 import net.cassite.byteioc.bytecode.JavassistByteCodeProcessor;
 import net.cassite.byteioc.dependencies.*;
@@ -17,6 +21,14 @@ public class TestPureIoC {
         @BeforeClass
         public static void classSetUp() {
                 processor = new JavassistByteCodeProcessor(new DefaultClassPoolProvider());
+        }
+
+        @Test
+        public void testAnnotationRetriving() throws Exception {
+                ClassPool pool = ClassPool.getDefault();
+                CtClass cls = pool.get("net.cassite.byteioc.Bean1");
+                CtField field = cls.getDeclaredField("testStr");
+                Assert.assertTrue(field.getAnnotation(AutoWire.class) instanceof AutoWire);
         }
 
         @Test
