@@ -5,10 +5,7 @@ import net.cassite.byteioc.dependencies.Dependencies;
 import net.cassite.byteioc.dependencies.PrimitiveInfo;
 
 import java.lang.annotation.Annotation;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * helper for handlers
@@ -69,13 +66,18 @@ public class Helper {
         }
 
         public String getInstanceNameByClass(String className) {
-                // TODO
+                for (CtClass cls : getDefaultConstructorsToUse().keySet()) {
+                        if (cls.getName().equals(className)) {
+                                return getDefaultConstructorsToUse().get(cls);
+                        }
+                }
                 return null;
         }
 
         private String addPrimitive(PrimitiveInfo info) {
-                // TODO
-                return "";
+                String name = generateName();
+                dependencies.addPrimitiveInfo(name, info);
+                return name;
         }
 
         public String addPrimitive(String primitive) {
@@ -124,8 +126,8 @@ public class Helper {
         }
 
         public String generateName() {
-                // TODO
-                return "";
+                UUID uuid = UUID.randomUUID();
+                return uuid.toString().replace("-", "");
         }
 
         public static boolean isSetter(CtMethod method) {

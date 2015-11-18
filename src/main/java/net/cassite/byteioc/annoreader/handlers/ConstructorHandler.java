@@ -15,10 +15,13 @@ public class ConstructorHandler implements ConstructorAnnotationHandler {
         @Override
         public String handle(String name, String[] args, CtConstructor constructor, Collection<Annotation> annotations, ConstructorChainHandler chain, Helper helper) throws Exception {
                 String nameFromChain = chain.handle(name, args, constructor, annotations, chain, helper);
-                if (Helper.resultChanged(name, nameFromChain)) {
-                        return nameFromChain;
+                if (!Helper.resultChanged(name, nameFromChain) && name == null) {
+                        nameFromChain = helper.generateName();
                 }
-                return helper.generateName();
+                if (constructor.getDeclaringClass().getConstructors().length == 1) {
+                        helper.getDefaultConstructorsToUse().put(constructor.getDeclaringClass(), nameFromChain);
+                }
+                return nameFromChain;
         }
 
         @Override

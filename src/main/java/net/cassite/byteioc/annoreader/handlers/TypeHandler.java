@@ -19,7 +19,7 @@ public class TypeHandler implements TypeAnnotationHandler {
                 if (!Helper.resultChanged(name, nameFromChain) && nameFromChain == null) {
                         nameFromChain = helper.generateName();
                 }
-                AutoWireTypeHandler.putCtClass(aClass, WireType.SETTERS);
+                AutoWireTypeHandler.getClassesToWire().put(aClass, WireType.SETTERS);
                 return nameFromChain;
         }
 

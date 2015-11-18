@@ -7,9 +7,7 @@ import net.cassite.byteioc.dependencies.*;
 import net.cassite.byteioc.exceptions.ReadingException;
 
 import java.lang.annotation.Annotation;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * It's an implementation of DependencyReader, which reads the annotations presented on classes/fields/methods/constructors/parameters
@@ -32,7 +30,6 @@ public class AnnotationReader implements DependencyReader {
                 Helper helper = new Helper(this, dependencies);
                 for (String cls : classes) {
                         CtClass ctClass = classPool.get(cls);
-                        String name = handleType(ctClass, helper);
 
                         CtConstructor[] constructors = ctClass.getConstructors();
                         for (CtConstructor con : constructors) {
@@ -42,18 +39,20 @@ public class AnnotationReader implements DependencyReader {
                                         args[i] = handleConstructorParam(con, i, helper);
                                 }
                                 String nameC = handleConstructor(args, con, helper);
-                                if (nameC == null && constructors.length != 1 && name == null) {
+                                if (nameC == null && constructors.length != 1) {
                                         throw new ReadingException("Cannot find constructor " + con.getLongName() + " name");
-                                } else {
+                                } else if (nameC != null) {
                                         BClass[] bClasses = new BClass[length];
                                         CtClass[] ctClasses = con.getParameterTypes();
                                         for (int i = 0; i < length; ++i) {
                                                 bClasses[i] = new BClass(ctClasses[i].getName());
                                         }
                                         ConstructorInfo info = new ConstructorInfo(new BClass(cls), new BConstructor(bClasses), args);
-                                        dependencies.addConstructorInfo(nameC == null ? name : nameC, info);
+                                        dependencies.addConstructorInfo(nameC, info);
                                 }
                         }
+
+                        handleType(ctClass, helper);
 
                         FieldMethodInfo info = new FieldMethodInfo(new BClass(cls));
                         for (CtMethod method : ctClass.getDeclaredMethods()) {
@@ -94,14 +93,14 @@ public class AnnotationReader implements DependencyReader {
                 Annotation[] annotations = (Annotation[]) member.getParameterAnnotations()[index];
                 List<Annotation> annoList = Arrays.asList(annotations);
                 ParamChainHandler chain = new ParamChainHandler(paramAnnotationHandlers);
-                return chain.handleMethod(null, member, annoList, chain, helper);
+                return chain.handleMethod(null, index, member, annoList, chain, helper);
         }
 
         String handleConstructorParam(CtConstructor member, int index, Helper helper) throws Exception {
                 Annotation[] annotations = (Annotation[]) member.getParameterAnnotations()[index];
                 List<Annotation> annoList = Arrays.asList(annotations);
                 ParamChainHandler chain = new ParamChainHandler(paramAnnotationHandlers);
-                return chain.handleConstructor(null, member, annoList, chain, helper);
+                return chain.handleConstructor(null, index, member, annoList, chain, helper);
         }
 
         String handleConstructor(String[] args, CtConstructor constructor, Helper helper) throws Exception {

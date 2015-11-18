@@ -23,18 +23,18 @@ public class ParamChainHandler implements ParamAnnotationHandler {
         }
 
         @Override
-        public String handleConstructor(String name, CtConstructor member, Collection<Annotation> annotations, ParamChainHandler chain, Helper helper) throws Exception {
+        public String handleConstructor(String name, int index, CtConstructor member, Collection<Annotation> annotations, ParamChainHandler chain, Helper helper) throws Exception {
                 if (paramAnnotationHandlers.hasNext()) {
-                        return paramAnnotationHandlers.next().handleConstructor(name, member, annotations, chain, helper);
+                        return paramAnnotationHandlers.next().handleConstructor(name, index, member, annotations, chain, helper);
                 } else {
                         return name;
                 }
         }
 
         @Override
-        public String handleMethod(String name, CtMethod member, Collection<Annotation> annotations, ParamChainHandler chain, Helper helper) throws Exception {
+        public String handleMethod(String name, int index, CtMethod member, Collection<Annotation> annotations, ParamChainHandler chain, Helper helper) throws Exception {
                 if (paramAnnotationHandlers.hasNext()) {
-                        return paramAnnotationHandlers.next().handleMethod(name, member, annotations, chain, helper);
+                        return paramAnnotationHandlers.next().handleMethod(name, index, member, annotations, chain, helper);
                 } else {
                         return name;
                 }

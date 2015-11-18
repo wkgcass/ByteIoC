@@ -16,7 +16,7 @@ import java.util.Collection;
 public class UseParamHandler implements ParamAnnotationHandler {
         @Override
         public String handleConstructor(String name, int index, CtConstructor member, Collection<Annotation> annotations, ParamChainHandler chain, Helper helper) throws Exception {
-                String nameFromChain = chain.handleConstructor(name, member, annotations, chain, helper);
+                String nameFromChain = chain.handleConstructor(name, index, member, annotations, chain, helper);
                 if (Helper.resultChanged(name, nameFromChain)) {
                         return nameFromChain;
                 }
@@ -34,7 +34,7 @@ public class UseParamHandler implements ParamAnnotationHandler {
 
         @Override
         public String handleMethod(String name, int index, CtMethod member, Collection<Annotation> annotations, ParamChainHandler chain, Helper helper) throws Exception {
-                String nameFromChain = chain.handleMethod(name, member, annotations, chain, helper);
+                String nameFromChain = chain.handleMethod(name, index, member, annotations, chain, helper);
                 if (Helper.resultChanged(name, nameFromChain)) {
                         return nameFromChain;
                 }
