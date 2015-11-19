@@ -16,6 +16,8 @@ public class Helper {
 
         private Map<CtClass, String> defaultConstructorsToUse = new HashMap<CtClass, String>();
 
+        private Map<CtClass, >
+
         Helper(AnnotationReader reader, Dependencies dependencies) {
                 this.reader = reader;
                 this.dependencies = dependencies;
@@ -71,7 +73,32 @@ public class Helper {
                                 return getDefaultConstructorsToUse().get(cls);
                         }
                 }
-                return null;
+                // not mapped
+                try {
+                        CtClass cls = reader.classPool.get(className);
+                        String name = reader.handleType(cls, this);
+                        if (name != null) {
+                                getDefaultConstructorsToUse().put(cls, name);
+                                return name;
+                        }
+                        // name not found on type
+                        if (cls.getConstructors().length == 1) {
+                                CtConstructor con = cls.getConstructors()[0];
+                                String[] args = reader.handleConstructorArgs(con, this);
+                                String nameFromConstructor = reader.handleConstructor(args, con, this);
+                                if (nameFromConstructor == null) {
+                                        // name not found, then generate one
+                                        nameFromConstructor = generateName();
+                                }
+                                getDefaultConstructorsToUse().put(cls, nameFromConstructor);
+                                return nameFromConstructor;
+                        } else {
+
+                                throw new IllegalArgumentException("Class Has Multiple Constructors");
+                        }
+                } catch (Exception e) {
+                        throw new RuntimeException(e);
+                }
         }
 
         private String addPrimitive(PrimitiveInfo info) {
@@ -186,6 +213,14 @@ public class Helper {
                         return addPrimitive(val.charAt(0));
                 } else {
                         return addPrimitive(val);
+                }
+        }
+
+        public static String[] argsBackup(String[] args) {
+                if (null == args) {
+                        return null;
+                } else {
+                        return Arrays.copyOf(args, args.length);
                 }
         }
 }

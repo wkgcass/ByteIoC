@@ -16,7 +16,9 @@ public class DefaultConstructorHandler implements ConstructorAnnotationHandler {
         @Override
         public String handle(String name, String[] args, CtConstructor constructor, Collection<Annotation> annotations, ConstructorChainHandler chain, Helper helper) throws Exception {
                 String nameFromChain = chain.handle(name, args, constructor, annotations, chain, helper);
-                helper.getDefaultConstructorsToUse().put(constructor.getDeclaringClass(), nameFromChain);
+                if (nameFromChain != null) {
+                        helper.getDefaultConstructorsToUse().put(constructor.getDeclaringClass(), nameFromChain);
+                }
                 return nameFromChain;
         }
 

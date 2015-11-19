@@ -13,16 +13,25 @@ import java.util.*;
  * It's an implementation of DependencyReader, which reads the annotations presented on classes/fields/methods/constructors/parameters
  */
 public class AnnotationReader implements DependencyReader {
-        private final List<ConstructorAnnotationHandler> constructorAnnotationHandlers = new ArrayList<ConstructorAnnotationHandler>();
-        private final List<FieldAnnotationHandler> fieldAnnotationHandlers = new ArrayList<FieldAnnotationHandler>();
-        private final List<MethodAnnotationHandler> methodAnnotationHandlers = new ArrayList<MethodAnnotationHandler>();
-        private final List<ParamAnnotationHandler> paramAnnotationHandlers = new ArrayList<ParamAnnotationHandler>();
-        private final List<TypeAnnotationHandler> typeAnnotationHandlers = new ArrayList<TypeAnnotationHandler>();
-        private final List<String> classes = new ArrayList<String>();
+        final List<ConstructorAnnotationHandler> constructorAnnotationHandlers = new ArrayList<ConstructorAnnotationHandler>();
+        final List<FieldAnnotationHandler> fieldAnnotationHandlers = new ArrayList<FieldAnnotationHandler>();
+        final List<MethodAnnotationHandler> methodAnnotationHandlers = new ArrayList<MethodAnnotationHandler>();
+        final List<ParamAnnotationHandler> paramAnnotationHandlers = new ArrayList<ParamAnnotationHandler>();
+        final List<TypeAnnotationHandler> typeAnnotationHandlers = new ArrayList<TypeAnnotationHandler>();
+        final List<String> classes = new ArrayList<String>();
         final ClassPool classPool;
 
         public AnnotationReader(ClassPoolProvider provider) {
                 this.classPool = provider.getClassPool();
+        }
+
+        String[] handleConstructorArgs(CtConstructor con, Helper helper) throws Exception {
+                int length = con.getParameterTypes().length;
+                String[] args = new String[length];
+                for (int i = 0; i < length; ++i) {
+                        args[i] = handleConstructorParam(con, i, helper);
+                }
+                return args;
         }
 
         @Override
@@ -34,10 +43,7 @@ public class AnnotationReader implements DependencyReader {
                         CtConstructor[] constructors = ctClass.getConstructors();
                         for (CtConstructor con : constructors) {
                                 int length = con.getParameterTypes().length;
-                                String[] args = new String[length];
-                                for (int i = 0; i < length; ++i) {
-                                        args[i] = handleConstructorParam(con, i, helper);
-                                }
+                                String[] args = handleConstructorArgs(con, helper);
                                 String nameC = handleConstructor(args, con, helper);
                                 if (nameC == null && constructors.length != 1) {
                                         throw new ReadingException("Cannot find constructor " + con.getLongName() + " name");

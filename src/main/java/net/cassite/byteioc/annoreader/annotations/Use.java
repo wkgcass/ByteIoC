@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
  * automatically wire the class/setter/field/param
  */
 @Retention(RetentionPolicy.CLASS)
-@Target({ElementType.TYPE, ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER})
+@Target({ElementType.TYPE, ElementType.FIELD, ElementType.METHOD, ElementType.CONSTRUCTOR, ElementType.PARAMETER})
 public @interface Use {
         String value() default "";
 

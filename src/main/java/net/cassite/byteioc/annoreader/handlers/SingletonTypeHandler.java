@@ -17,7 +17,9 @@ public class SingletonTypeHandler implements TypeAnnotationHandler {
         @Override
         public String handle(String name, CtClass aClass, Collection<Annotation> annotations, TypeChainHandler chain, Helper helper) throws Exception {
                 String nameFromChain = chain.handle(name, aClass, annotations, chain, helper);
-                helper.getDependencies().addSingletonClass(new BClass(aClass.getName()), helper.getInstanceNameByClass(aClass.getName()));
+                if (nameFromChain != null) {
+                        helper.getDependencies().addSingletonClass(new BClass(aClass.getName()), nameFromChain);
+                }
 
                 return nameFromChain;
         }
